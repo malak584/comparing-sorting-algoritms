@@ -32,10 +32,21 @@ def selection_sort(arr):
             arr[j], arr[smallest] = arr[smallest], arr[j] 
     return arr
 
+def insertion_sort(arr):
+    n = len(arr)
+    for i in range(1, n):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
+
 def measure_time(sort_function, data):
-    start_time = time.time() # Record start time
+    start_time = time.time()
     sort_function(data[:])  # Use a copy to keep original data intact
-    return time.time() - start_time # Return elapsed time
+    return time.time() - start_time
 
 # Generate datasets
 small_dataset = [random.randint(1, 1000) for _ in range(50)]
@@ -45,10 +56,11 @@ large_dataset = [random.randint(1, 1000) for _ in range(1000)]
 print(" Small Dataset (50 product weights):")
 print(f" Bubble Sort took {measure_time(bubble_sort, small_dataset):.6f} seconds.")
 print(f" Selection Sort took {measure_time(selection_sort, small_dataset):.6f} seconds.")
+print(f" Insertion Sort took {measure_time(insertion_sort, small_dataset):.6f} seconds.")
 print(f" Python Built-in Sort took {measure_time(sorted, small_dataset):.6f} seconds.")
 
 print("\n Large Dataset (1000 product weights):")
 print(f" Bubble Sort took {measure_time(bubble_sort, large_dataset):.6f} seconds.")
 print(f" Selection Sort took {measure_time(selection_sort, large_dataset):.6f} seconds.")
+print(f" Insertion Sort took {measure_time(insertion_sort, large_dataset):.6f} seconds.")
 print(f" Python Built-in Sort took {measure_time(sorted, large_dataset):.6f} seconds.")
-
