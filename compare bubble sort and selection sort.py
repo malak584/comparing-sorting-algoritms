@@ -51,6 +51,7 @@ def measure_time(sort_function, data):
 # Generate datasets
 small_dataset = [random.randint(1, 1000) for _ in range(50)]
 large_dataset = [random.randint(1, 1000) for _ in range(1000)]
+extra_large_dataset = [random.randint(1, 1000) for _ in range(10000)]
 
 # Measure performance
 print(" Small Dataset (50 product weights):")
@@ -64,3 +65,9 @@ print(f" Bubble Sort took {measure_time(bubble_sort, large_dataset):.6f} seconds
 print(f" Selection Sort took {measure_time(selection_sort, large_dataset):.6f} seconds.")
 print(f" Insertion Sort took {measure_time(insertion_sort, large_dataset):.6f} seconds.")
 print(f" Python Built-in Sort took {measure_time(sorted, large_dataset):.6f} seconds.")
+
+print("\n Extra Large Dataset (10000 product weights):")
+print(f" Bubble Sort took {measure_time(bubble_sort, extra_large_dataset):.6f} seconds.")
+print(f" Selection Sort took {measure_time(selection_sort, extra_large_dataset):.6f} seconds.")
+print(f" Insertion Sort took {measure_time(insertion_sort, extra_large_dataset):.6f} seconds.")
+print(f" Python Built-in Sort took {measure_time(sorted, extra_large_dataset):.6f} seconds.")
