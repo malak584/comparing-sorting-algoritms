@@ -49,7 +49,7 @@ def measure_time(sort_function, data):
     return time.time() - start_time
 
 # Generate datasets
-small_dataset = [random.randint(1, 1000) for _ in range(50)]
+small_dataset = [random.randint(1, 1000) for _ in range(100)]
 large_dataset = [random.randint(1, 1000) for _ in range(1000)]
 extra_large_dataset = [random.randint(1, 1000) for _ in range(10000)]
 
