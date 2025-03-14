@@ -54,18 +54,19 @@ large_dataset = [random.randint(1, 1000) for _ in range(1000)]
 extra_large_dataset = [random.randint(1, 1000) for _ in range(10000)]
 
 # Measure performance
+#for small datasets bubble sort is the best 
 print(" Small Dataset (50 product weights):")
 print(f" Bubble Sort took {measure_time(bubble_sort, small_dataset):.6f} seconds.")
 print(f" Selection Sort took {measure_time(selection_sort, small_dataset):.6f} seconds.")
 print(f" Insertion Sort took {measure_time(insertion_sort, small_dataset):.6f} seconds.")
 print(f" Python Built-in Sort took {measure_time(sorted, small_dataset):.6f} seconds.")
-
+#for large datasets insertion sort is the best 
 print("\n Large Dataset (1000 product weights):")
 print(f" Bubble Sort took {measure_time(bubble_sort, large_dataset):.6f} seconds.")
 print(f" Selection Sort took {measure_time(selection_sort, large_dataset):.6f} seconds.")
 print(f" Insertion Sort took {measure_time(insertion_sort, large_dataset):.6f} seconds.")
 print(f" Python Built-in Sort took {measure_time(sorted, large_dataset):.6f} seconds.")
-
+#for extra large datasets selection sort is the best 
 print("\n Extra Large Dataset (10000 product weights):")
 print(f" Bubble Sort took {measure_time(bubble_sort, extra_large_dataset):.6f} seconds.")
 print(f" Selection Sort took {measure_time(selection_sort, extra_large_dataset):.6f} seconds.")
